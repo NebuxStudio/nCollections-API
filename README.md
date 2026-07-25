@@ -29,10 +29,9 @@ fail.
 </repositories>
 
 <dependency>
-    <groupId>com.github.NebuxStudio.nCollections-api</groupId>
-    <artifactId>ncollections-api</artifactId>
+    <groupId>com.github.NebuxStudio</groupId>
+    <artifactId>nCollections-API</artifactId>
     <version>v1.1.0</version>
-    <scope>provided</scope>
 </dependency>
 ```
 
@@ -44,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'com.github.NebuxStudio.nCollections-api:ncollections-api:v1.1.0'
+    compileOnly 'com.github.NebuxStudio:nCollections-API:v1.1.0'
 }
 ```
 
