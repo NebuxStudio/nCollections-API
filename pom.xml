@@ -4,29 +4,23 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.nebuxstudio</groupId>
-        <artifactId>ncollections-parent</artifactId>
-        <version>1.1.0</version>
-    </parent>
-
-    <!--
-        This is the ONLY artifact third-party developers should ever depend on.
-        It contains nothing but the NCollectionsService interface, the
-        NCollectionsAPI static facade (a thin ServicesManager lookup, no real
-        logic), and the two Bukkit events. No manager/storage/gui classes,
-        nothing implementation-specific — there is genuinely nothing sensitive
-        in this module.
-
-        Consumers must use scope=provided (Maven) / compileOnly (Gradle):
-        the real classes are supplied at runtime by the nCollections plugin
-        jar installed on the server, never bundled/shaded into anyone else's
-        plugin. Shading this module into another plugin would create a
-        duplicate/incompatible class definition and break the ServicesManager
-        lookup at runtime.
-    -->
+    <groupId>dev.valentino</groupId>
     <artifactId>ncollections-api</artifactId>
+    <version>1.1.0</version>
     <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>papermc</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
